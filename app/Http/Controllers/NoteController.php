@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Mockery\Matcher\Not;
 
 class NoteController extends Controller
 {
@@ -30,5 +31,25 @@ class NoteController extends Controller
         ]);
 
         return redirect()->route("index");
+    }
+
+    public function edit(Note $note){
+        return view("edit", compact("note"));
+    }
+
+    public function update(Note $note, Request $request){
+        $note->update([
+            "text" => $request->post("text")
+        ]);
+        return redirect()->route("index");
+    }
+
+    public function destroy(Note $note){
+        $note->delete();
+        return redirect()->route("index");
+    }
+
+    public function show(Note $note){
+        return view("view", compact("note"));
     }
 }
