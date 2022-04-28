@@ -5,11 +5,21 @@
     <div class="row justify-content-center">
         <div class="col-md-3">
             <a href="{{route('index')}}">list</a>
-            <br>
-            <a href="{{route('create')}}">create</a>
         </div>
         <div class="col-md-9">
-            {{$note->text}}
+
+
+            {{$note->number}}<br>
+            {{$note->number_tab}}<br>
+            {{$note->rank}}<br>
+            {{$note->name}}<br>
+            {{$note->birthday}}<br>
+            {{$note->passport_serio}}<br>
+            {{$note->passport_number}}<br>
+            {{$note->passport}}<br>
+            {{$note->who_gift}}<br>
+            {{$note->date_gift}}
+
         </div>
     </div>
 </div>

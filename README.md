@@ -9,3 +9,22 @@
 
 ## About Notes
 
+* Личный №	
+* Таб.№	
+* В/звание	
+* ФИО	
+* Дата рождения	
+* Серия	
+* Номер	
+* Паспорта	
+* Кем выдан	
+* Дата выдачи
+
+```
+php artisan make:migration add_phone_field_to_users_table
+```
+Where phone is new field name and users is table name
+In our case table name is - notes
+```
+php artisan make:migration add_number_field_to_notes_table
+```

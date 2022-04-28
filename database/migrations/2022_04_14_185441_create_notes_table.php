@@ -15,7 +15,17 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->text("text");
+            $table->text("number");
+            $table->text("number_tab");
+            $table->text("rank");
+            $table->text("name");
+            $table->text("birthday");
+            $table->text("passport_serio");
+            $table->text("passport_number");
+            $table->text("passport");
+            $table->text("who_gift");
+            $table->text("date_gift");
+
             $table->timestamps();
         });
     }

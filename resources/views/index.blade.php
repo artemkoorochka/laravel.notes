@@ -4,26 +4,28 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-3">
-            <a href="{{route('create')}}">create</a>
+
         </div>
         <div class="col-md-9">
+
+            <div class="mb-3">{{$notes->links()}}</div>
+
             @foreach($notes as $note)
                 <div class="alert alert-info row justify-content-between">
-                    <div class="col-auto">{{$note->text}}</div>
                     <div class="col-auto">
-                        <form action="{{route("destroy", $note->id)}}" method="post">
-                            @csrf
-                            @method("delete")
-                            <a href="{{route("show", $note->id)}}" class="btn btn-outline-primary btn-sm">View</a>
-                            <a href="{{route("edit", $note->id)}}" class="btn btn-outline-info btn-sm">Edit</a>
-                            <input type="submit"
-                                   class="btn btn-outline-danger btn-sm"
-                                   value="Delete">
-                        </form>
-
+                        <div class="row">
+                            <div class="col-auto">{{$note->number}}</div>
+                            <div class="col-auto">{{$note->name}}</div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <a href="{{route("show", $note->id)}}" class="btn btn-outline-primary btn-sm">View</a>
                     </div>
                 </div>
             @endforeach
+
+                <div class="mt-3">{{$notes->links()}}</div>
+
         </div>
     </div>
 </div>
