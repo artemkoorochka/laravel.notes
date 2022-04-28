@@ -21473,3 +21473,5 @@ Route::get("/table", function (){
 
 Route::get('/table_data', [\App\Http\Controllers\NoteController::class, "json_export"])->name("json_export");
 
+Route::get('/files', [App\Http\Controllers\FileController::class, "index"])->name("files.index");
+Route::post('/files/create', [App\Http\Controllers\FileController::class, "create"])->name("files.upload");
